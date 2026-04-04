@@ -48,10 +48,15 @@
             padding: 64px 24px;
         }
         .screenshots {
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
             text-align: center;
             padding: 32px 0;
+        }
+        .screenshots .row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
         }
         .screenshots img {
             width: 48%;
@@ -188,6 +193,8 @@
             .hero .subtitle { font-size: 18px; }
             .features { grid-template-columns: 1fr; }
             .pricing .plans { flex-direction: column; align-items: center; }
+            .screenshots .row { flex-direction: column; align-items: center; }
+            .screenshots img { width: 100%; }
         }
     </style>
 </head>
@@ -200,7 +207,7 @@
     </div>
 
     <div class="screenshots">
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <div class="row">
             <img src="assets/screen/Screen3.jpg" alt="Tally light mode with live checkouts">
             <img src="assets/screen/Screen1.jpg" alt="Tally dark mode dashboard">
         </div>
@@ -237,7 +244,7 @@
     </section>
 
     <div class="screenshots">
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <div class="row">
             <img src="assets/screen/Screen4.jpg" alt="Tally light mode full day chart">
             <img src="assets/screen/Screen2.jpg" alt="Tally light mode dashboard">
         </div>
