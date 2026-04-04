@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tally — Sales Bar for Mac</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: #1d1d1f;
+            background: #fff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 24px 80px;
+            background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+        .hero .subtitle {
+            font-size: 21px;
+            color: #6e6e73;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+        .hero .cta {
+            display: inline-block;
+            background: #0071e3;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .hero .cta:hover { background: #0077ed; }
+        section {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+        section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: -0.3px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .feature {
+            padding: 24px;
+            background: #f5f5f7;
+            border-radius: 16px;
+        }
+        .feature h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .feature p {
+            font-size: 15px;
+            color: #6e6e73;
+            line-height: 1.5;
+        }
+        .built {
+            text-align: center;
+            background: #f5f5f7;
+            border-radius: 20px;
+            padding: 48px 32px;
+            margin: 0 auto;
+            max-width: 720px;
+        }
+        .built h2 { margin-bottom: 16px; }
+        .built p {
+            font-size: 17px;
+            color: #6e6e73;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .pricing {
+            text-align: center;
+        }
+        .pricing .plans {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        .plan {
+            flex: 1;
+            max-width: 300px;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: left;
+        }
+        .plan.free {
+            background: #f5f5f7;
+        }
+        .plan.pro {
+            background: #1d1d1f;
+            color: #fff;
+        }
+        .plan h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .plan .price {
+            font-size: 15px;
+            color: #6e6e73;
+            margin-bottom: 16px;
+        }
+        .plan.pro .price { color: #a1a1a6; }
+        .plan p {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .plan.pro p { color: #d2d2d7; }
+        .steps {
+            background: #f5f5f7;
+            border-radius: 20px;
+            padding: 48px 32px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .steps h2 { margin-bottom: 24px; }
+        .steps ol {
+            list-style: none;
+            counter-reset: step;
+        }
+        .steps li {
+            counter-increment: step;
+            font-size: 17px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .steps li:last-child { border-bottom: none; }
+        .steps li::before {
+            content: counter(step);
+            background: #0071e3;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 48px 24px;
+            color: #6e6e73;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+        }
+        footer a { color: #0071e3; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .hero .subtitle { font-size: 18px; }
+            .features { grid-template-columns: 1fr; }
+            .pricing .plans { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Tally</h1>
+        <p class="subtitle">Your store's sales, always one click away from your Mac menu bar.</p>
+        <a href="https://apps.apple.com" class="cta">Download on the Mac App Store</a>
+    </div>
+
+    <section>
+        <h2>What you get</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Revenue today</h3>
+                <p>See today's total revenue with a comparison to yesterday at the same time.</p>
+            </div>
+            <div class="feature">
+                <h3>Order count</h3>
+                <p>Track how many orders have come in today and how you're trending.</p>
+            </div>
+            <div class="feature">
+                <h3>Live revenue chart</h3>
+                <p>An hourly breakdown of your sales throughout the day.</p>
+            </div>
+            <div class="feature">
+                <h3>Live checkout tracking</h3>
+                <p>See who's checking out right now — products, traffic source, and location.</p>
+            </div>
+            <div class="feature">
+                <h3>Order notifications</h3>
+                <p>Get a notification with sound every time a new order comes in.</p>
+            </div>
+            <div class="feature">
+                <h3>Fulfilled orders</h3>
+                <p>Keep track of how many orders have been shipped today.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="built">
+            <h2>Built for your Mac</h2>
+            <p>Tally is a native macOS app — fast, lightweight, and private. It runs in your menu bar and uses minimal resources. Your data stays on your Mac and is never shared with third parties.</p>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <h2>Pricing</h2>
+        <div class="plans">
+            <div class="plan free">
+                <h3>Free</h3>
+                <p class="price">Up to 50 orders/month</p>
+                <p>Everything you need to monitor your store. No credit card required.</p>
+            </div>
+            <div class="plan pro">
+                <h3>Pro</h3>
+                <p class="price">$4.99/month · 14-day free trial</p>
+                <p>Unlimited orders for growing stores. All features included.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="steps">
+            <h2>Get started</h2>
+            <ol>
+                <li>Download Tally from the Mac App Store</li>
+                <li>Open it from your menu bar</li>
+                <li>Enter your store URL and connect</li>
+                <li>Your dashboard is ready in seconds</li>
+            </ol>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="support">Support</a> · <a href="https://gianfilippocisternino.github.io/macos-tally-app/privacy">Privacy Policy</a></p>
+        <p style="margin-top: 8px;">&copy; 2026 Gianfilippo Cisternino</p>
+    </footer>
+</body>
+</html>

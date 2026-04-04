@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tally — Support</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: #1d1d1f;
+            background: #fff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .header {
+            text-align: center;
+            padding: 80px 24px 48px;
+            background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
+        }
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 12px;
+        }
+        .header p {
+            font-size: 19px;
+            color: #6e6e73;
+        }
+        section {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        .contact {
+            text-align: center;
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 40px 32px;
+            margin-bottom: 48px;
+        }
+        .contact p {
+            font-size: 17px;
+            color: #6e6e73;
+            margin-bottom: 16px;
+        }
+        .contact a {
+            display: inline-block;
+            background: #0071e3;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .contact a:hover { background: #0077ed; }
+        .contact .note {
+            font-size: 14px;
+            color: #86868b;
+            margin-top: 12px;
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.2px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item h3::after {
+            content: '+';
+            font-size: 22px;
+            font-weight: 300;
+            color: #86868b;
+            transition: transform 0.2s;
+        }
+        .faq-item.open h3::after {
+            transform: rotate(45deg);
+        }
+        .faq-item p {
+            font-size: 15px;
+            color: #6e6e73;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.open p {
+            max-height: 200px;
+            padding-top: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 48px 24px;
+            color: #6e6e73;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+        }
+        footer a { color: #0071e3; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Support</h1>
+        <p>We're here to help you get the most out of Tally.</p>
+    </div>
+
+    <section>
+        <div class="contact">
+            <p>Having trouble or want to report a bug?</p>
+            <a href="mailto:gianfilippo.cisternino@gmail.com">Email us</a>
+            <p class="note">We typically respond within 24–48 hours.</p>
+        </div>
+
+        <h2>Frequently asked questions</h2>
+
+        <div class="faq-item open">
+            <h3>How do I connect my store?</h3>
+            <p>Open Tally from the menu bar, enter your .myshopify.com store URL, and click Connect. You'll be redirected to authorize read-only access to your store data.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What data does Tally access?</h3>
+            <p>Tally has read-only access to your orders, revenue, and analytics. It never modifies, creates, or deletes any data in your store.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where is my data stored?</h3>
+            <p>Your store data is only kept in memory while the app is running — nothing is saved to disk. Your access token is stored securely in the macOS Keychain.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I get order notifications?</h3>
+            <p>Notifications are enabled by default. Make sure Tally has notification permissions in System Settings > Notifications. You can toggle sound on or off from the app settings.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What are live checkouts?</h3>
+            <p>Live checkouts show customers who are currently in the checkout process. You can see which products they're buying, where the traffic is coming from, and their location.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why did a checkout disappear?</h3>
+            <p>Checkouts are automatically removed after 10 minutes of inactivity, as they are likely abandoned or completed.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is Tally free?</h3>
+            <p>Tally is free for stores with fewer than 50 orders per month. For larger stores, Tally Pro is available at $4.99/month with a 14-day free trial.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I manage my subscription?</h3>
+            <p>Your subscription is managed through Shopify billing. You can view or cancel it from your Shopify admin under Settings > Billing.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I disconnect my store?</h3>
+            <p>Click the disconnect button in the bottom bar of the Tally dashboard. This removes your access token from the Keychain.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What macOS version is required?</h3>
+            <p>Tally requires macOS 14 (Sonoma) or later.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="./">Home</a> · <a href="https://gianfilippocisternino.github.io/macos-tally-app/privacy">Privacy Policy</a></p>
+        <p style="margin-top: 8px;">&copy; 2026 Gianfilippo Cisternino</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-item h3').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
