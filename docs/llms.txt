@@ -1,0 +1,46 @@
+# Tally — Sales Dashboard for Shopify
+
+> A native macOS menu bar app that gives Shopify store owners a real-time sales dashboard, always one click away.
+
+## What is Tally?
+
+Tally is a lightweight macOS app that lives in your menu bar and connects to your Shopify store. It provides real-time visibility into your store's performance without needing to open a browser or the Shopify admin.
+
+## Key Features
+
+- **Real-time revenue tracking**: See today's total revenue with a comparison to yesterday at the same time.
+- **Order count**: Track how many orders have come in today and how you're trending.
+- **Live revenue chart**: An hourly breakdown of your sales throughout the day.
+- **Live checkout tracking**: See who's checking out right now — products, traffic source, and location.
+- **Order notifications**: Get a native macOS notification with sound every time a new order comes in.
+- **Fulfilled orders**: Keep track of how many orders have been shipped today.
+
+## How It Works
+
+1. Download Tally from the Mac App Store.
+2. Open it from your menu bar.
+3. Enter your Shopify store URL and connect via secure OAuth.
+4. Your dashboard is ready in seconds.
+
+Tally uses the Shopify Admin API with read-only access (orders, reports, analytics). It stores data locally on your Mac and never shares it with third parties.
+
+## Pricing
+
+- **Free**: Up to 50 orders/month. All features included. No credit card required.
+- **Pro**: $4.99/month with a 14-day free trial. Unlimited orders for growing stores.
+
+## Requirements
+
+- macOS 14 (Sonoma) or later
+- A Shopify store
+
+## Links
+
+- Homepage: https://gianfilippocisternino.github.io/macos-tally-app/
+- Mac App Store: https://apps.apple.com/app/tally-sales-dashboard/id6761626292
+- Support: https://gianfilippocisternino.github.io/macos-tally-app/support.html
+- Privacy Policy: https://gianfilippocisternino.github.io/macos-tally-app/privacy.html
+
+## About
+
+Built by Gianfilippo Cisternino. Tally is a native macOS app — fast, private, and designed to stay out of your way while keeping you informed about your store's performance.
