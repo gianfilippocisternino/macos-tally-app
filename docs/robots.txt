@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gianfilippocisternino.github.io/macos-tally-app/sitemap.xml
