@@ -98,6 +98,16 @@
             transition: background 0.2s;
         }
         .hero .cta:hover { background: #0077ed; }
+        .hero .cta-secondary {
+            background: transparent;
+            color: #0071e3;
+            border: 1px solid #0071e3;
+            margin-left: 12px;
+        }
+        .hero .cta-secondary:hover {
+            background: #f5f5f7;
+            color: #0071e3;
+        }
         section {
             max-width: 720px;
             margin: 0 auto;
@@ -251,15 +261,17 @@
             .pricing .plans { flex-direction: column; align-items: center; }
             .screenshots .row { flex-direction: column; align-items: center; }
             .screenshots img { width: 100%; }
+            .hero .cta, .hero .cta-secondary { display: block; max-width: 280px; margin: 12px auto; }
         }
     </style>
 </head>
 <body>
     <header class="hero">
         <img src="assets/logo/logo.jpg" alt="Tally — Shopify sales dashboard app icon" width="80" height="80" style="border-radius: 18px; margin-bottom: 20px;">
-        <h1>Tally — Real-Time Shopify Sales Dashboard for Mac</h1>
-        <p class="subtitle">Monitor your Shopify store's revenue, orders, and live checkouts from your Mac menu bar. Always one click away.</p>
+        <h1>Your Shopify store, live in your Mac menu bar</h1>
+        <p class="subtitle">Real-time revenue, instant order notifications, and live checkout tracking — always one glance away. No tabs, no admin, no refresh.</p>
         <a href="macappstore://apps.apple.com/app/tally-sales-dashboard/id6761626292" class="cta">Download on the Mac App Store</a>
+        <a href="https://apps.shopify.com/tally-sales-bar-for-mac" class="cta cta-secondary">Install via Shopify App Store</a>
     </header>
 
     <main>
@@ -310,7 +322,7 @@
     <section>
         <div class="built">
             <h2>Built for your Mac</h2>
-            <p>Tally is a native macOS app — fast, lightweight, and private. It runs in your menu bar and uses minimal resources. Your data stays on your Mac and is never shared with third parties.</p>
+            <p>Tally is a native macOS app — fast, lightweight, and private. Read-only access to your Shopify orders and analytics. Your access token is stored securely in the macOS Keychain. We never sell or share your data.</p>
         </div>
     </section>
 
@@ -324,7 +336,7 @@
             </div>
             <div class="plan pro">
                 <h3>Pro</h3>
-                <p class="price">$4.99/month · 14-day free trial</p>
+                <p class="price">$4.99/month · or $49.99/year (save 17%)<br>14-day free trial</p>
                 <p>Unlimited orders for growing stores. All features included.</p>
             </div>
         </div>
