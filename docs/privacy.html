@@ -78,7 +78,11 @@
     </div>
 
     <section>
-        <p>Tally ("the App") is a Shopify app developed by Gianfilippo Cisternino that displays your store's sales data in two places: a macOS menu bar app and an app inside your Shopify admin. Both use a server hosted on Cloudflare Workers ("the server"). This policy explains what data the App accesses, where it is processed, how long it is kept, and your rights.</p>
+        <p>Tally ("the App") is a Shopify app that displays your store's sales data in two places: a macOS menu bar app and an app inside your Shopify admin. Both use a server hosted on Cloudflare Workers ("the server"). This policy explains what personal data the App processes, why, where, for how long, and what rights you have under the EU General Data Protection Regulation (GDPR) and other applicable laws.</p>
+
+        <h2>Who is responsible for your data</h2>
+        <p>The data controller is Gianfilippo Cisternino, an individual developer based in Italy. Contact: <a href="mailto:gianfilippo.cisternino@gmail.com" style="color: #0071e3; text-decoration: none;">gianfilippo.cisternino@gmail.com</a>.</p>
+        <p>For data about <strong>you, the merchant</strong> (your store, its access token, your subscription status), Tally is the controller. For data about <strong>your store's customers</strong> (names on orders; email address and shipping location on checkouts), you are the controller and Tally processes that data on your behalf, only to show it to you, as required by Shopify's terms for apps. Your customers should send privacy requests to your store; Shopify forwards them to Tally.</p>
 
         <h2>What data we access</h2>
         <p>When you install Tally, it requests read-only access to the following Shopify scopes:</p>
@@ -86,23 +90,43 @@
             <li><code>read_orders</code> — to display orders, revenue, fulfillment status, and abandoned checkouts</li>
             <li><code>read_analytics</code> — to display the conversion funnel and sales trend</li>
         </ul>
-        <p>Through these scopes the App can see some data about your customers: the customer name on recent orders, and the email address, shipping city and country, products, and total of checkouts in progress. The App does not modify, create, or delete any data in your Shopify store.</p>
+        <p>Through these scopes the App can see some data about your customers: the customer name on recent orders, and the email address, shipping city and country, products, total, and referring site of checkouts in progress. The App does not modify, create, or delete any data in your Shopify store.</p>
+        <p>Like any web service, the server and Cloudflare's network also process technical data when the apps connect to it, such as IP addresses and request metadata. Tally does not keep logs of these requests.</p>
+
+        <h2>Why we process it, and on what legal basis</h2>
+        <ul>
+            <li><strong>To provide the App</strong> — showing your sales dashboard, live checkouts, and order notifications. Legal basis: performance of the contract with you (GDPR Art. 6(1)(b)). Without this data the App cannot work.</li>
+            <li><strong>To apply the free plan limit and your subscription</strong> — checking your subscription status and monthly order count. Legal basis: performance of the contract (Art. 6(1)(b)).</li>
+            <li><strong>To handle privacy requests</strong> — keeping a record of customer data requests forwarded by Shopify. Legal basis: compliance with legal obligations (Art. 6(1)(c)) and our legitimate interest in being able to prove how requests were handled (Art. 6(1)(f)).</li>
+        </ul>
+        <p>For your customers' data, the legal basis is the one you, as the merchant, rely on for your store.</p>
 
         <h2>How data is processed</h2>
         <ul>
-            <li><strong>Mac app.</strong> Orders and analytics are fetched directly from Shopify and kept in memory while the App is running. They are not written to disk. Your Shopify access token is stored in the macOS Keychain.</li>
+            <li><strong>Mac app.</strong> Orders and analytics are fetched directly from Shopify and kept in memory while the App is running. The App saves only its settings and your store URL on your Mac, and stores your Shopify access token in the macOS Keychain. New-order notifications show the customer name and order amount; macOS keeps delivered notifications in Notification Center until you clear them.</li>
             <li><strong>App inside the Shopify admin.</strong> When you open it, the server fetches your dashboard data from Shopify and returns it to your browser. This data is not stored on the server.</li>
-            <li><strong>Live checkouts.</strong> Shopify sends checkout events to the server so both apps can show checkouts in real time. Each event can contain the shopper's email address, shipping city and country, products, total, and referring site. Events are stored on the server for at most 24 hours and then deleted automatically.</li>
+            <li><strong>Live checkouts.</strong> Shopify sends checkout events to the server so both apps can show checkouts in real time. Each event can contain the shopper's email address, shipping city and country, products, total, and referring site. Events are stored on the server for at most 24 hours and then deleted automatically. Because of this, by the time a customer data request reaches Tally there is normally no data left to export.</li>
             <li><strong>Access token.</strong> The server stores an access token for your store, and a hash of it used to authenticate the Mac app, so it can serve the live checkout feed and the app inside your Shopify admin. Both are deleted when you uninstall Tally.</li>
-            <li><strong>Billing.</strong> The server caches whether your store has an active subscription and its monthly order count, for up to 6 hours. This contains no customer data.</li>
-            <li><strong>Privacy requests.</strong> When Shopify forwards a customer data request, the server keeps a copy of the request, which includes the customer identifiers Shopify sends, for 90 days as an audit record.</li>
+            <li><strong>Billing.</strong> Subscriptions are billed by Shopify. Tally never receives your payment details. The server caches whether your store has an active subscription and its monthly order count, for up to 6 hours. This contains no customer data.</li>
+            <li><strong>Privacy requests.</strong> When Shopify forwards a customer data request, the server keeps a copy of the request, which includes the customer identifiers Shopify sends, for 90 days.</li>
         </ul>
+
+        <h2>Who receives your data</h2>
+        <ul>
+            <li><strong>Cloudflare, Inc.</strong> hosts the server and stores the data described above, acting as our processor under its Data Processing Addendum, which requires it to protect the data at a level equivalent to this policy.</li>
+            <li><strong>Shopify</strong> is the source of the store data, and handles billing and the forwarding of privacy requests.</li>
+            <li><strong>Apple</strong> distributes the Mac app through the Mac App Store under its own privacy policy. The Mac app contains no third-party SDKs.</li>
+        </ul>
+        <p>We do not sell or share personal data with anyone else, and we do not use it for advertising.</p>
+
+        <h2>International transfers</h2>
+        <p>Cloudflare runs a global network, so data may be processed outside the European Economic Area, including in the United States. These transfers are covered by the EU Standard Contractual Clauses included in Cloudflare's Data Processing Addendum and by Cloudflare's certification under the EU-U.S. Data Privacy Framework.</p>
 
         <h2>What we do not do</h2>
         <ul>
-            <li>We do not use analytics, tracking, or advertising SDKs.</li>
-            <li>We do not sell, share, or transfer your data to third parties. Cloudflare hosts the server and processes data only to run it.</li>
-            <li>We do not build profiles of you or your customers.</li>
+            <li>We do not use analytics, tracking, or advertising SDKs, and this website sets no cookies.</li>
+            <li>We do not build profiles of you or your customers, and we make no automated decisions with legal or similarly significant effects.</li>
+            <li>The App is a business tool and is not directed at children.</li>
         </ul>
 
         <h2>Data retention</h2>
@@ -116,13 +140,15 @@
         </ul>
 
         <h2>Your rights</h2>
-        <p>You can disconnect your store from the Mac app settings, which removes the token from your Keychain. You can uninstall Tally from your Shopify admin under Settings > Apps and sales channels; Shopify then asks the server to delete your store's data, including its access token and checkout events. When Shopify forwards a request to delete a customer's data, the server removes that customer's checkout events.</p>
+        <p>Under the GDPR you have the right to access your personal data, to have it corrected or deleted, to restrict or object to its processing, and to receive it in a portable format. To exercise any of these rights, email us at the address above; we will reply within one month.</p>
+        <p>You can also stop the processing yourself at any time. Disconnecting your store in the Mac app settings removes the token from your Keychain. Uninstalling Tally from your Shopify admin (Settings > Apps and sales channels) makes Shopify ask the server to delete your store's data, including its access token and checkout events. When Shopify forwards a request to delete one of your customers' data, the server removes that customer's checkout events.</p>
+        <p>If you believe your data is being processed unlawfully, you have the right to lodge a complaint with a supervisory authority. In Italy this is the Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" style="color: #0071e3; text-decoration: none;">www.garanteprivacy.it</a>); you can also contact the authority in the EU country where you live or work.</p>
 
         <h2>Changes to this policy</h2>
         <p>We may update this policy from time to time. Changes will be posted on this page with an updated date.</p>
 
         <h2>Contact</h2>
-        <p>For questions about this privacy policy, contact: <a href="mailto:gianfilippo.cisternino@gmail.com" style="color: #0071e3; text-decoration: none;">gianfilippo.cisternino@gmail.com</a></p>
+        <p>For questions about this privacy policy or to exercise your rights, contact: <a href="mailto:gianfilippo.cisternino@gmail.com" style="color: #0071e3; text-decoration: none;">gianfilippo.cisternino@gmail.com</a></p>
     </section>
 
     <footer>
