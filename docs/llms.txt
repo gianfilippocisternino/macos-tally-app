@@ -11,9 +11,18 @@ Tally is a lightweight macOS app that lives in your menu bar and connects to you
 - **Real-time revenue tracking**: See today's total revenue with a comparison to yesterday at the same time.
 - **Order count**: Track how many orders have come in today and how you're trending.
 - **Live revenue chart**: An hourly breakdown of your sales throughout the day.
-- **Live checkout tracking**: See who's checking out right now — products, traffic source, and location.
+- **Live checkout tracking**: A real-time list of every checkout in progress, with products, cart value, shipping city/country, and traffic source. A checkout leaves the list as soon as it becomes an order.
+- **Live insights**: Top products, traffic sources, and locations across the checkouts currently open.
+- **Conversion funnel**: Sessions → added to cart → reached checkout → completed, from Shopify Analytics.
+- **Abandoned carts**: Today's abandoned checkout count, optionally shown in the menu bar.
 - **Order notifications**: Get a native macOS notification with sound every time a new order comes in.
 - **Fulfilled orders**: Keep track of how many orders have been shipped today.
+
+## Checkout data Shopify doesn't list
+
+Shopify's Live View shows how many shoppers are in checkout right now, but not the details of each one. Tally subscribes to Shopify's `checkouts/create` and `checkouts/update` webhooks (available only to apps) and shows each open checkout — products, cart value, shipping location, and referring site — within seconds. Checkout events are kept on Tally's server for at most 24 hours.
+
+The conversion funnel and abandoned-cart count come from Shopify's own analytics and Admin API; Tally keeps them visible in the menu bar instead of inside the admin.
 
 ## How It Works
 
@@ -22,7 +31,7 @@ Tally is a lightweight macOS app that lives in your menu bar and connects to you
 3. Enter your Shopify store URL and connect via secure OAuth.
 4. Your dashboard is ready in seconds.
 
-Tally uses the Shopify Admin API with read-only access (orders, reports, analytics). It stores data locally on your Mac and never shares it with third parties.
+Tally uses the Shopify Admin API with read-only access (orders, reports, analytics). Order and analytics data is read directly from Shopify on your Mac; live checkout events pass through Tally's server and expire after 24 hours. Data is never sold or shared with third parties.
 
 ## Pricing
 

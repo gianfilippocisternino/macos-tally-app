@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="msvalidate.01" content="8CEAC029CE1793E37BA15883219ACA53" />
     <meta name="google-site-verification" content="AIoXWpKinCVR4r4g8dqrJ5kkMh3uw1VMEDhPE1hDbGA" />
-    <title>Tally — Real-Time Shopify Sales Dashboard for Mac Menu Bar</title>
-    <meta name="description" content="Tally is a native macOS menu bar app that shows Shopify store owners their revenue, orders, live checkouts, and sales notifications in real time. Free to use.">
+    <title>Tally — Live Shopify Sales & Checkout Tracker for Mac Menu Bar</title>
+    <meta name="description" content="Mac menu bar app for Shopify: live revenue and orders, plus every checkout in progress — products, cart value, location and traffic source — that Shopify admin doesn't list.">
     <link rel="canonical" href="https://gianfilippocisternino.github.io/macos-tally-app/">
     <link rel="alternate" type="text/plain" href="https://gianfilippocisternino.github.io/macos-tally-app/llms.txt" title="LLMs.txt">
-    <meta property="og:title" content="Tally — Real-Time Shopify Sales Dashboard for Mac">
-    <meta property="og:description" content="Monitor your Shopify store's revenue, orders, and live checkouts from your Mac menu bar. Native macOS app, real-time updates, free to use.">
+    <meta property="og:title" content="Tally — See the Shopify Checkouts in Progress, Live on Your Mac">
+    <meta property="og:description" content="Shopify shows how many shoppers are checking out. Tally shows each checkout in progress — what's in it, what it's worth, where it came from — plus live revenue and orders, in your Mac menu bar.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gianfilippocisternino.github.io/macos-tally-app/">
     <meta property="og:image" content="https://gianfilippocisternino.github.io/macos-tally-app/assets/screen/Screen3.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tally — Real-Time Shopify Sales Dashboard for Mac">
-    <meta name="twitter:description" content="Monitor your Shopify store's revenue, orders, and live checkouts from your Mac menu bar.">
+    <meta name="twitter:title" content="Tally — See the Shopify Checkouts in Progress, Live on Your Mac">
+    <meta name="twitter:description" content="Every Shopify checkout in progress — products, cart value, location, traffic source — plus live revenue and orders, in your Mac menu bar.">
     <meta name="twitter:image" content="https://gianfilippocisternino.github.io/macos-tally-app/assets/screen/Screen3.jpg">
     <script type="application/ld+json">
     {
@@ -24,7 +24,7 @@
       "@type": "SoftwareApplication",
       "name": "Tally",
       "headline": "Real-Time Shopify Sales Dashboard for Mac Menu Bar",
-      "description": "Tally is a native macOS menu bar app that gives Shopify store owners a real-time sales dashboard with revenue tracking, order count, live checkout monitoring, and order notifications.",
+      "description": "Tally is a native macOS menu bar app that gives Shopify store owners a real-time sales dashboard: revenue, orders, conversion funnel, order notifications, and a live feed of every checkout in progress with its products, cart value, shipping location and traffic source — detail the Shopify admin does not list while the checkout is happening.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "macOS 14+",
       "offers": [
@@ -47,12 +47,14 @@
         "@type": "Person",
         "name": "Gianfilippo Cisternino"
       },
-      "aggregateRating": null,
-      "featureList": [
+            "featureList": [
         "Real-time revenue tracking with comparison to yesterday",
         "Live order count and trend",
         "Hourly sales chart",
-        "Live checkout tracking with products, traffic source, and location",
+        "Live feed of checkouts in progress with products, cart value, traffic source, and location",
+        "Top products, traffic sources, and locations across live checkouts",
+        "Conversion funnel: sessions, added to cart, reached checkout, completed",
+        "Abandoned cart count",
         "Native macOS order notifications with sound",
         "Fulfilled order tracking"
       ],
@@ -245,6 +247,26 @@
             font-weight: 600;
             flex-shrink: 0;
         }
+        .hidden-data .lead {
+            font-size: 19px;
+            color: #6e6e73;
+            margin-bottom: 32px;
+        }
+        .compare {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+        .compare th, .compare td {
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        .compare thead th { font-size: 13px; text-transform: uppercase; letter-spacing: 0.4px; color: #6e6e73; }
+        .compare td:last-child { font-weight: 500; }
+        .hidden-data .note { font-size: 14px; color: #6e6e73; }
         footer {
             text-align: center;
             padding: 48px 24px;
@@ -261,6 +283,8 @@
             .pricing .plans { flex-direction: column; align-items: center; }
             .screenshots .row { flex-direction: column; align-items: center; }
             .screenshots img { width: 100%; }
+            .compare { font-size: 14px; }
+            .compare th, .compare td { padding: 10px 6px; }
             .hero .cta, .hero .cta-secondary { display: block; max-width: 280px; margin: 12px auto; }
         }
     </style>
@@ -269,7 +293,7 @@
     <header class="hero">
         <img src="assets/logo/logo.jpg" alt="Tally — Shopify sales dashboard app icon" width="80" height="80" style="border-radius: 18px; margin-bottom: 20px;">
         <h1>Your Shopify store, live in your Mac menu bar</h1>
-        <p class="subtitle">Real-time revenue, instant order notifications, and live checkout tracking — always one glance away. No tabs, no admin, no refresh.</p>
+        <p class="subtitle">Real-time revenue, instant order notifications, and the checkouts in progress that Shopify doesn't list for you — always one glance away. No tabs, no admin, no refresh.</p>
         <a href="macappstore://apps.apple.com/app/tally-sales-dashboard/id6761626292" class="cta">Download on the Mac App Store</a>
         <a href="https://apps.shopify.com/tally-sales-bar-for-mac" class="cta cta-secondary">Install via Shopify App Store</a>
     </header>
@@ -281,6 +305,24 @@
             <img src="assets/screen/Screen1.jpg" alt="Tally Shopify sales dashboard in dark mode showing today's revenue and order count">
         </div>
     </div>
+
+    <section class="hidden-data" id="live-checkouts">
+        <h2>See the Shopify checkouts in progress</h2>
+        <p class="lead">Shopify's Live View tells you <em>how many</em> shoppers are checking out. Tally shows you <em>each one</em>: what's in the cart, what it's worth, where it's shipping, and which site sent the shopper — while the checkout is still open.</p>
+        <table class="compare">
+            <thead>
+                <tr><th scope="col">Checkout data</th><th scope="col">Shopify admin</th><th scope="col">Tally</th></tr>
+            </thead>
+            <tbody>
+                <tr><th scope="row">Shoppers in checkout right now</th><td>A count in Live View</td><td>Every checkout, listed live</td></tr>
+                <tr><th scope="row">Products and cart value of an open checkout</th><td>Not listed while it's in progress</td><td>Shown as the checkout starts and updates</td></tr>
+                <tr><th scope="row">Shipping city and country</th><td>Not listed while it's in progress</td><td>Per checkout, plus top locations</td></tr>
+                <tr><th scope="row">Traffic source of each checkout</th><td>Not listed while it's in progress</td><td>Per checkout, plus top sources</td></tr>
+                <tr><th scope="row">Checkout completed</th><td>Appears as a new order</td><td>Drops off the live list the moment it converts</td></tr>
+            </tbody>
+        </table>
+        <p class="note">How it works: Tally subscribes to Shopify's official <code>checkouts/create</code> and <code>checkouts/update</code> webhooks — events Shopify sends only to apps — and turns them into a live feed on your Mac, refreshed every few seconds. Your conversion funnel (sessions → added to cart → reached checkout → completed) comes from Shopify Analytics, pinned where you can actually see it.</p>
+    </section>
 
     <section>
         <h2>Shopify Sales Monitoring Features</h2>
@@ -299,7 +341,15 @@
             </div>
             <div class="feature">
                 <h3>Live checkout tracking</h3>
-                <p>See who's checking out right now — products, traffic source, and location.</p>
+                <p>Every checkout in progress — products, cart value, traffic source, and location — updated within seconds.</p>
+            </div>
+            <div class="feature">
+                <h3>Conversion funnel</h3>
+                <p>Sessions → added to cart → reached checkout → completed, so you see where shoppers drop off.</p>
+            </div>
+            <div class="feature">
+                <h3>Abandoned carts</h3>
+                <p>Today's abandoned checkouts at a glance, and optionally as a counter in your menu bar.</p>
             </div>
             <div class="feature">
                 <h3>Order notifications</h3>
@@ -358,6 +408,14 @@
         <h2>Frequently Asked Questions</h2>
         <div class="features" style="grid-template-columns: 1fr;">
             <div class="feature">
+                <h3>Can I see who is checking out on my Shopify store right now?</h3>
+                <p>Yes. Tally lists every checkout in progress on your Shopify store in real time, with the products in the cart, the cart value, the shipping city and country, and the traffic source. A checkout disappears from the list as soon as it becomes an order.</p>
+            </div>
+            <div class="feature">
+                <h3>Does Shopify show checkouts that are still in progress?</h3>
+                <p>Shopify's Live View shows how many visitors are currently in checkout, but not the details of each one. Tally receives Shopify's checkout webhooks, which are only available to apps, and shows each open checkout with its products, value, location and referrer.</p>
+            </div>
+            <div class="feature">
                 <h3>What data does Tally access from my Shopify store?</h3>
                 <p>Tally uses read-only access to your orders, reports, and analytics. It cannot modify your store, products, or customer data.</p>
             </div>
@@ -371,7 +429,7 @@
             </div>
             <div class="feature">
                 <h3>Is my data private?</h3>
-                <p>Your data stays on your Mac. Tally connects directly to the Shopify API and never shares your data with third parties.</p>
+                <p>Tally reads your orders and analytics directly from the Shopify API. Live checkout events pass through Tally's server and are deleted automatically after 24 hours. Your data is never sold or shared with third parties.</p>
             </div>
         </div>
     </section>
@@ -380,6 +438,22 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I see who is checking out on my Shopify store right now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Tally lists every checkout in progress on your Shopify store in real time, with the products in the cart, the cart value, the shipping city and country, and the traffic source. A checkout disappears from the list as soon as it becomes an order."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Shopify show checkouts that are still in progress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shopify's Live View shows how many visitors are currently in checkout, but not the details of each one. Tally receives Shopify's checkout webhooks, which are only available to apps, and shows each open checkout with its products, value, location and referrer."
+          }
+        },
         {
           "@type": "Question",
           "name": "What data does Tally access from my Shopify store?",
@@ -409,7 +483,7 @@
           "name": "Is my data private?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Your data stays on your Mac. Tally connects directly to the Shopify API and never shares your data with third parties."
+            "text": "Tally reads your orders and analytics directly from the Shopify API. Live checkout events pass through Tally's server and are deleted automatically after 24 hours. Your data is never sold or shared with third parties."
           }
         }
       ]
