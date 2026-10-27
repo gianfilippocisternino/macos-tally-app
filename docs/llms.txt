@@ -28,12 +28,12 @@ Tally subscribes to Shopify's `checkouts/create` and `checkouts/update` webhooks
 3. Enter your Shopify store URL and connect via secure OAuth.
 4. Your dashboard is ready in seconds.
 
-Tally uses the Shopify Admin API with read-only access to orders and analytics. Live checkout events, which can include the shopper's email and shipping city, are processed by Tally's server, stored only temporarily, and deleted automatically. Data is never sold or shared with third parties.
+Tally uses the Shopify Admin API with read-only access to orders and analytics. Live checkout events, which can include the shopper's email and shipping city, are processed by Tally's server and deleted automatically within 24 hours. Data is never sold or shared with third parties.
 
 ## Pricing
 
 - **Free**: Up to 50 orders/month. All features included. No credit card required.
-- **Pro**: $4.99/month with a 14-day free trial. Unlimited orders for growing stores.
+- **Pro**: $9.99/month, billed through Shopify, with a 14-day free trial. Unlimited orders for growing stores.
 
 ## Requirements
 
