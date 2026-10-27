@@ -97,7 +97,7 @@
         <ul>
             <li><strong>To provide the App</strong> — showing your sales dashboard, live checkouts, and order notifications. Legal basis: performance of the contract with you (GDPR Art. 6(1)(b)). Without this data the App cannot work.</li>
             <li><strong>To apply the free plan limit and your subscription</strong> — checking your subscription status and monthly order count. Legal basis: performance of the contract (Art. 6(1)(b)).</li>
-            <li><strong>To handle privacy requests</strong> — keeping a record of customer data requests forwarded by Shopify. Legal basis: compliance with legal obligations (Art. 6(1)(c)) and our legitimate interest in being able to prove how requests were handled (Art. 6(1)(f)).</li>
+            <li><strong>To handle privacy requests</strong> — answering customer data and deletion requests forwarded by Shopify. Legal basis: compliance with legal obligations (Art. 6(1)(c)).</li>
         </ul>
         <p>For your customers' data, the legal basis is the one you, as the merchant, rely on for your store.</p>
 
@@ -105,10 +105,10 @@
         <ul>
             <li><strong>Mac app.</strong> Orders and analytics are fetched directly from Shopify and kept in memory while the App is running. The App saves only its settings and your store URL on your Mac, and stores your Shopify access token in the macOS Keychain. New-order notifications show the customer name and order amount; macOS keeps delivered notifications in Notification Center until you clear them.</li>
             <li><strong>App inside the Shopify admin.</strong> When you open it, the server fetches your dashboard data from Shopify and returns it to your browser. This data is not stored on the server.</li>
-            <li><strong>Live checkouts.</strong> Shopify sends checkout events to the server so both apps can show checkouts in real time. Each event can contain the shopper's email address, shipping city and country, products, total, and referring site. Events are stored on the server for at most 24 hours and then deleted automatically. Because of this, by the time a customer data request reaches Tally there is normally no data left to export.</li>
+            <li><strong>Live checkouts.</strong> Shopify sends checkout events to the server so both apps can show checkouts in real time. Before anything is stored, the server keeps only what the apps display and masks personal data: the shopper's email address is reduced to a form like <code>ma***@g***.com</code>, the shipping city to its first three letters (<code>Mil***</code>), and the referring site to its domain. Each stored event contains only that masked data plus the shipping country, product names and quantities, the checkout total, and timestamps. Customer IDs, checkout recovery links, landing pages, and item prices are discarded. Events are deleted automatically after at most 24 hours.</li>
             <li><strong>Access token.</strong> The server stores an access token for your store, and a hash of it used to authenticate the Mac app, so it can serve the live checkout feed and the app inside your Shopify admin. Both are deleted when you uninstall Tally.</li>
             <li><strong>Billing.</strong> Subscriptions are billed by Shopify. Tally never receives your payment details. The server caches whether your store has an active subscription and its monthly order count, for up to 6 hours. This contains no customer data.</li>
-            <li><strong>Privacy requests.</strong> When Shopify forwards a customer data request, the server keeps a copy of the request, which includes the customer identifiers Shopify sends, for 90 days.</li>
+            <li><strong>Privacy requests.</strong> Customer data requests forwarded by Shopify are answered without storing a copy of the request. Because stored checkout data is masked and deleted within 24 hours, there is normally no customer data to export.</li>
         </ul>
 
         <h2>Who receives your data</h2>
@@ -131,17 +131,16 @@
 
         <h2>Data retention</h2>
         <ul>
-            <li>Live checkout events: at most 24 hours</li>
+            <li>Live checkout events (masked): at most 24 hours</li>
             <li>Store access token on the server: until you uninstall Tally (Shopify sends the deletion request 48 hours after uninstall)</li>
             <li>Access token on your Mac: in the macOS Keychain until you disconnect your store</li>
             <li>Billing status cache: up to 6 hours</li>
-            <li>Customer data requests forwarded by Shopify: 90 days</li>
             <li>Data in the Mac app's memory: cleared when the App is closed</li>
         </ul>
 
         <h2>Your rights</h2>
         <p>Under the GDPR you have the right to access your personal data, to have it corrected or deleted, to restrict or object to its processing, and to receive it in a portable format. To exercise any of these rights, email us at the address above; we will reply within one month.</p>
-        <p>You can also stop the processing yourself at any time. Disconnecting your store in the Mac app settings removes the token from your Keychain. Uninstalling Tally from your Shopify admin (Settings > Apps and sales channels) makes Shopify ask the server to delete your store's data, including its access token and checkout events. When Shopify forwards a request to delete one of your customers' data, the server removes that customer's checkout events.</p>
+        <p>You can also stop the processing yourself at any time. Disconnecting your store in the Mac app settings removes the token from your Keychain. Uninstalling Tally from your Shopify admin (Settings > Apps and sales channels) makes Shopify ask the server to delete your store's data, including its access token and checkout events. When Shopify forwards a request to delete one of your customers' data, the server removes the checkout events that match that customer's masked email.</p>
         <p>If you believe your data is being processed unlawfully, you have the right to lodge a complaint with a supervisory authority. In Italy this is the Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" style="color: #0071e3; text-decoration: none;">www.garanteprivacy.it</a>); you can also contact the authority in the EU country where you live or work.</p>
 
         <h2>Changes to this policy</h2>

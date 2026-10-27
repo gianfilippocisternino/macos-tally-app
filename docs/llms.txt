@@ -13,7 +13,7 @@ Tally is a lightweight macOS app that lives in your menu bar and connects to you
 - **Live revenue chart**: An hourly breakdown of your sales throughout the day.
 - **Live checkout tracking**: How many shoppers are in checkout right now, with the top products in their carts, their traffic sources, and their shipping locations.
 - **Abandoned checkouts**: Optional menu bar counter for today's abandoned checkouts.
-- **Tally in the Shopify admin**: A companion app inside the Shopify admin adds a conversion funnel (sessions → added to cart → reached checkout → completed) and a list of the latest open checkouts with customer email, location, item count, and total.
+- **Tally in the Shopify admin**: A companion app inside the Shopify admin adds a conversion funnel (sessions → added to cart → reached checkout → completed) and a list of the latest open checkouts with masked customer email, location, item count, and total.
 - **Order notifications**: Get a native macOS notification with sound every time a new order comes in.
 - **Fulfilled orders**: Keep track of how many orders have been shipped today.
 
@@ -28,7 +28,7 @@ Tally subscribes to Shopify's `checkouts/create` and `checkouts/update` webhooks
 3. Enter your Shopify store URL and connect via secure OAuth.
 4. Your dashboard is ready in seconds.
 
-Tally uses the Shopify Admin API with read-only access to orders and analytics. Live checkout events, which can include the shopper's email and shipping city, are processed by Tally's server and deleted automatically within 24 hours. Data is never sold or shared with third parties.
+Tally uses the Shopify Admin API with read-only access to orders and analytics. Live checkout events are stored on Tally's server only in masked form (for example ma***@g***.com and Mil***) and deleted automatically within 24 hours. Data is never sold or shared with third parties.
 
 ## Pricing
 
