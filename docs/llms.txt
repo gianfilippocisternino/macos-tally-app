@@ -28,7 +28,7 @@ Tally subscribes to Shopify's `checkouts/create` and `checkouts/update` webhooks
 3. Enter your Shopify store URL and connect via secure OAuth.
 4. Your dashboard is ready in seconds.
 
-Tally uses the Shopify Admin API with read-only access to orders and analytics. Live checkout events are stored on Tally's server only in masked form (for example ma***@g***.com and Mil***) and deleted automatically within 24 hours. Data is never sold or shared with third parties.
+Tally uses the Shopify Admin API with read-only access to orders and analytics. Live checkout events are stored on Tally's server with the shopper's email masked (for example mar***@gmail.com) and deleted automatically within 24 hours. Data is never sold or shared with third parties.
 
 ## Pricing
 

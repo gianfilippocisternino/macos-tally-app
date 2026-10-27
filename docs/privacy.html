@@ -105,10 +105,10 @@
         <ul>
             <li><strong>Mac app.</strong> Orders and analytics are fetched directly from Shopify and kept in memory while the App is running. The App saves only its settings and your store URL on your Mac, and stores your Shopify access token in the macOS Keychain. New-order notifications show the customer name and order amount; macOS keeps delivered notifications in Notification Center until you clear them.</li>
             <li><strong>App inside the Shopify admin.</strong> When you open it, the server fetches your dashboard data from Shopify and returns it to your browser. This data is not stored on the server.</li>
-            <li><strong>Live checkouts.</strong> Shopify sends checkout events to the server so both apps can show checkouts in real time. Before anything is stored, the server keeps only what the apps display and masks personal data: the shopper's email address is reduced to a form like <code>ma***@g***.com</code>, the shipping city to its first three letters (<code>Mil***</code>), and the referring site to its domain. Each stored event contains only that masked data plus the shipping country, product names and quantities, the checkout total, and timestamps. Customer IDs, checkout recovery links, landing pages, and item prices are discarded. Events are deleted automatically after at most 24 hours.</li>
+            <li><strong>Live checkouts.</strong> Shopify sends checkout events to the server so both apps can show checkouts in real time. Before anything is stored, the server keeps only what the apps display: the shopper's email address is masked to a form like <code>mar***@gmail.com</code>, and the referring site is reduced to its domain. Each stored event contains only the masked email, the shipping city and country, product names and quantities, the checkout total, and timestamps. Customer IDs, checkout recovery links, landing pages, and item prices are discarded. Events are deleted automatically after at most 24 hours.</li>
             <li><strong>Access token.</strong> The server stores an access token for your store, and a hash of it used to authenticate the Mac app, so it can serve the live checkout feed and the app inside your Shopify admin. Both are deleted when you uninstall Tally.</li>
             <li><strong>Billing.</strong> Subscriptions are billed by Shopify. Tally never receives your payment details. The server caches whether your store has an active subscription and its monthly order count, for up to 6 hours. This contains no customer data.</li>
-            <li><strong>Privacy requests.</strong> Customer data requests forwarded by Shopify are answered without storing a copy of the request. Because stored checkout data is masked and deleted within 24 hours, there is normally no customer data to export.</li>
+            <li><strong>Privacy requests.</strong> Customer data requests forwarded by Shopify are answered without storing a copy of the request. Because stored checkout events hold only a masked email and are deleted within 24 hours, there is normally no customer data to export.</li>
         </ul>
 
         <h2>Who receives your data</h2>
@@ -131,7 +131,7 @@
 
         <h2>Data retention</h2>
         <ul>
-            <li>Live checkout events (masked): at most 24 hours</li>
+            <li>Live checkout events (with masked email): at most 24 hours</li>
             <li>Store access token on the server: until you uninstall Tally (Shopify sends the deletion request 48 hours after uninstall)</li>
             <li>Access token on your Mac: in the macOS Keychain until you disconnect your store</li>
             <li>Billing status cache: up to 6 hours</li>
