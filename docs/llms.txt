@@ -33,7 +33,7 @@ Tally uses the Shopify Admin API with read-only access to orders and analytics. 
 ## Pricing
 
 - **Free**: Up to 50 orders/month. All features included. No credit card required.
-- **Pro**: $9.99/month, billed through Shopify, with a 14-day free trial. Unlimited orders for growing stores.
+- **Pro**: $4.99/month or $49.99/year, billed through Shopify, with a 14-day free trial. Unlimited orders for growing stores.
 
 ## Requirements
 
